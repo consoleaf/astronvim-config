@@ -6,4 +6,53 @@ return {
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = 120,
+      disabled_filetypes = { "help" },
+    },
+  },
+  { import = "astrocommunity.code-runner.overseer-nvim" },
+
+  { import = "astrocommunity.color.ccc-nvim" },
+
+  { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.git.git-blame-nvim" },
+
+  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+
+  { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
+  { import = "astrocommunity.editing-support.refactoring-nvim" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  { import = "astrocommunity.editing-support.treej" },
+  { import = "astrocommunity.editing-support.zen-mode-nvim" },
+  { import = "astrocommunity.markdown-and-latex.glow-nvim" },
+
+  { import = "astrocommunity.motion.nvim-surround" },
+
+  { import = "astrocommunity.note-taking.obsidian-nvim" },
+  -- { import = "astrocommunity.note-taking.neorg" },
+
+  { import = "astrocommunity.project.project-nvim" },
+
+  { import = "astrocommunity.scrolling.mini-animate" },
+
+  { import = "astrocommunity.utility.neodim" },
+
+  { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.cmake" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.yaml" },
 }
