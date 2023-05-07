@@ -11,7 +11,9 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
@@ -20,6 +22,25 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>z"] = { name = "Zettelkasten" },
+    -- Launch panel if nothing is typed after <leader>z
+    ["<leader>zZ"] = { "<cmd>Telekasten panel<CR>" },
+    -- Most used functions
+    ["<leader>zf"] = { "<cmd>Telekasten find_notes<CR>" },
+    ["<leader>zg"] = { "<cmd>Telekasten search_notes<CR>" },
+    ["<leader>zd"] = { "<cmd>Telekasten goto_today<CR>" },
+    ["<leader>zz"] = { "<cmd>Telekasten follow_link<CR>" },
+    ["<leader>zn"] = { "<cmd>Telekasten new_note<CR>" },
+    ["<leader>zc"] = { "<cmd>Telekasten show_calendar<CR>" },
+    ["<leader>zb"] = { "<cmd>Telekasten show_backlinks<CR>" },
+    ["<leader>zI"] = { "<cmd>Telekasten insert_img_link<CR>" },
+    -- Call insert link automatically when we start typing a link
+
+    ["<leader>w"] = { "<C-w>" },
+    ["<leader>fp"] = {
+      function() require("telescope").extensions.projects.projects {} end,
+      desc = "Projects",
+    },
   },
   t = {
     -- setting a mapping to false will disable it

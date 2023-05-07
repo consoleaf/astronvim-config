@@ -37,7 +37,13 @@ return {
   { import = "astrocommunity.note-taking.obsidian-nvim" },
   -- { import = "astrocommunity.note-taking.neorg" },
 
-  { import = "astrocommunity.project.project-nvim" },
+  {
+    import = "astrocommunity.project.project-nvim",
+    opts = {
+      silent_chdir = false,
+      patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", ".project" },
+    },
+  },
 
   { import = "astrocommunity.scrolling.mini-animate" },
 
