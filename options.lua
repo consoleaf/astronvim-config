@@ -1,12 +1,18 @@
+if vim.g.neovide then
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+  vim.g.neovide_transparency = 0.95
+end
+
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
     -- set to true or false etc.
     relativenumber = false, -- sets vim.opt.relativenumber
     number = true, -- sets vim.opt.number
-    spell = true, -- sets vim.opt.spell
+    spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-    wrap = true, -- sets vim.opt.wrap
+    wrap = false, -- sets vim.opt.wrap
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
@@ -16,6 +22,13 @@ return {
     diagnostics_mode = 2, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+  },
+  lsp = {
+    formatting = {
+      disabled = {
+        "tsserver",
+      },
+    },
   },
 }
 -- If you need more control, you can use the function()...end notation

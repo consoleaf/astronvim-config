@@ -36,7 +36,7 @@ return {
     ["<leader>zI"] = { "<cmd>Telekasten insert_img_link<CR>" },
     -- Call insert link automatically when we start typing a link
 
-    ["<leader>w"] = { "<C-w>" },
+    ["<leader>w"] = { "<C-w>", desc = "+windows" },
     ["<leader>fp"] = {
       function() require("telescope").extensions.projects.projects {} end,
       desc = "Projects",

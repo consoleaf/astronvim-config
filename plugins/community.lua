@@ -25,10 +25,10 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
   { import = "astrocommunity.editing-support.neogen" },
-  { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  { import = "astrocommunity.editing-support.treej" },
+  { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.zen-mode-nvim" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
 
@@ -61,4 +61,9 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
+
+  { import = "astrocommunity.media.vim-wakatime" },
+
+  -- { import = "astrocommunity.bars-and-lines.feline-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
 }
