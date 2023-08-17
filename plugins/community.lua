@@ -4,7 +4,18 @@ return {
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  -- { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
+  { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
+  { import = "astrocommunity.colorscheme.nightfox-nvim" },
+  { import = "astrocommunity.colorscheme.nord-nvim" },
+  { import = "astrocommunity.colorscheme.nvim-juliana" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { import = "astrocommunity.colorscheme.rose-pine" },
+  { import = "astrocommunity.colorscheme.vscode-nvim" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
@@ -37,13 +48,14 @@ return {
   { import = "astrocommunity.note-taking.obsidian-nvim" },
   -- { import = "astrocommunity.note-taking.neorg" },
 
-  {
-    import = "astrocommunity.project.project-nvim",
-    opts = {
-      silent_chdir = false,
-      patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", ".project" },
-    },
-  },
+  -- {
+  --   import = "astrocommunity.project.project-nvim",
+  --   opts = {
+  --     silent_chdir = false,
+  --     detection_methods = { "pattern", "lsp" },
+  --     patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", ".project" },
+  --   },
+  -- },
 
   { import = "astrocommunity.scrolling.mini-animate" },
 
