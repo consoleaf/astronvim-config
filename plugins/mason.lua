@@ -4,16 +4,58 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
-    opts = {
-      -- ensure_installed = { "lua_ls" },
-    },
+    config = function()
+      require("lspconfig").rust_analyzer.setup {
+        settings = {
+          ["rust_analyzer"] = {
+            -- cargo = {
+            --   buildScripts = {
+            --     enable = true,
+            --   },
+            -- },
+            procMacro = {
+              enable = true,
+            },
+            completion = {
+              privateEditable = {
+                enable = true,
+              },
+            },
+            hover = {
+              actions = {
+                references = {
+                  enable = true,
+                },
+              },
+            },
+            inlayHints = {
+              -- bindingModeHints = {
+              --   enable = true,
+              -- },
+              -- lifetimeElisionHints = {
+              --   enable = "skip_trivial",
+              --   useParameterNames = true,
+              -- },
+            },
+            interpret = {
+              tests = true,
+            },
+            typing = {
+              autoClosingAngleBrackets = {
+                enable = true,
+              },
+            },
+          },
+        },
+      }
+    end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
   {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      -- ensure_installed = { "prettier", "stylua" },
+      ensure_installed = { "stylua" },
     },
   },
   {

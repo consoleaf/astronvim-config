@@ -27,7 +27,7 @@ return {
   },
   { import = "astrocommunity.code-runner.overseer-nvim" },
 
-  { import = "astrocommunity.color.ccc-nvim" },
+  -- { import = "astrocommunity.color.ccc-nvim" },
 
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.git.git-blame-nvim" },
@@ -74,7 +74,11 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
 
+  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+
   { import = "astrocommunity.media.vim-wakatime" },
+  --
+  -- { import = "astrocommunity.note-taking.obsidian-nvim", opts = { disable_frontmatter = true } },
 
   -- { import = "astrocommunity.bars-and-lines.feline-nvim" },
   -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },

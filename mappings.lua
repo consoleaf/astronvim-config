@@ -41,6 +41,24 @@ return {
       function() require("telescope").extensions.projects.projects {} end,
       desc = "Projects",
     },
+
+    ["gd"] = {
+      function() require("telescope.builtin").lsp_definitions() end,
+    },
+
+    ["gD"] = {
+      function() require("telescope.builtin").lsp_definitions { jump_type = "vsplit" } end,
+      desc = "Split and jump to def",
+    },
+
+    ["gr"] = {
+      function() require("telescope.builtin").lsp_references {} end,
+    },
+
+    ["gR"] = {
+      function() require("telescope.builtin").lsp_references { jump_type = "vsplit" } end,
+      desc = "References in split",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
