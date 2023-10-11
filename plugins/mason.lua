@@ -3,7 +3,6 @@ return {
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",
-    -- overrides `require("mason-lspconfig").setup(...)`
     config = function()
       require("lspconfig").rust_analyzer.setup {
         settings = {
@@ -49,6 +48,9 @@ return {
         },
       }
     end,
+    opts = {
+      ensure_installed = { "lua_ls", "rust_analyzer" },
+    },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
   {

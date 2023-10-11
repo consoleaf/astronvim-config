@@ -1,4 +1,4 @@
-function file_exists(name)
+local function file_exists(name)
    local f=io.open(name,"r")
    if f~=nil then io.close(f) return true else return false end
 end
@@ -60,6 +60,10 @@ return {
       }
       conceal.generate_conceals()
     end,
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    event = "VeryLazy",
   },
   {
     "tpope/vim-fugitive",
