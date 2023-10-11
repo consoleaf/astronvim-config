@@ -1,4 +1,10 @@
+function file_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
 local function load_env_proxy()
+  if not file_exists "~/scripts/proxy.sh" then return end
   local handle = io.popen "bash -c 'source ~/scripts/proxy.sh && echo -n $WINDOWS_IP'"
   if handle ~= nil then
     local result = handle:read "*a"
@@ -38,8 +44,6 @@ return {
   },
   {
     "Jxstxs/conceal.nvim",
-    dev = true,
-    dir = "/home/yakshibaev/forks/conceal.nvim",
     event = "BufRead",
     config = function()
       local conceal = require "conceal"
@@ -124,6 +128,7 @@ return {
     config = function(_, opts)
       local ccc = require "ccc"
 
+      if file_exists "~/Applications/gen-colors.ts" then
       local handle = io.popen "bun ~/Applications/gen-colors.ts"
       local colors_json = handle:read "*a"
       colors_json = vim.json.decode(colors_json)
@@ -141,6 +146,7 @@ return {
           ccc.picker.custom_entries(colors_json),
         },
       })
+      end
 
       ccc.setup(opts)
 
