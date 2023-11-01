@@ -47,6 +47,17 @@ return {
           },
         },
       }
+
+      require("lspconfig").tsserver.setup {
+        on_attach = function(client)
+          if client.resolved_capabilities == nil then client.resolved_capabilities = {} end
+          if client.server_capabilities == nil then client.server_capabilities = {} end
+          client.resolved_capabilities.document_formatting = false
+          client.resolved_capabilities.document_range_formatting = false
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+      }
     end,
     opts = {
       ensure_installed = { "lua_ls", "rust_analyzer" },

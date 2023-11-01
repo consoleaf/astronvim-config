@@ -1,6 +1,11 @@
 local function file_exists(name)
-   local f=io.open(name,"r")
-   if f~=nil then io.close(f) return true else return false end
+  local f = io.open(name, "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  else
+    return false
+  end
 end
 
 local function load_env_proxy()
@@ -29,10 +34,6 @@ return {
     "ironhouzi/bikey-nvim",
   },
   {
-    "justinmk/vim-sneak",
-    event = "BufRead",
-  },
-  {
     "hrsh7th/cmp-nvim-lsp-signature-help",
     config = function()
       require("cmp").setup {
@@ -43,7 +44,7 @@ return {
     end,
   },
   {
-    "Jxstxs/conceal.nvim",
+    "consoleaf/conceal.nvim",
     event = "BufRead",
     config = function()
       local conceal = require "conceal"
@@ -132,24 +133,26 @@ return {
     config = function(_, opts)
       local ccc = require "ccc"
 
-      if file_exists "~/Applications/gen-colors.ts" then
-      local handle = io.popen "bun ~/Applications/gen-colors.ts"
-      local colors_json = handle:read "*a"
-      colors_json = vim.json.decode(colors_json)
+      if file_exists "/home/yakshibaev/Applications/gen-colors.ts" then
+        local handle = io.popen "bun ~/Applications/gen-colors.ts"
+        local colors_json = handle:read "*a"
+        local success, decoded_colors = pcall(vim.json.decode, colors_json)
 
-      opts = vim.tbl_extend("keep", opts, {
-        pickers = {
-          ccc.picker.hex,
-          ccc.picker.css_rgb,
-          ccc.picker.css_hsl,
-          ccc.picker.css_hwb,
-          ccc.picker.css_lab,
-          ccc.picker.css_lch,
-          ccc.picker.css_oklab,
-          ccc.picker.css_oklch,
-          ccc.picker.custom_entries(colors_json),
-        },
-      })
+        if success then
+          opts = vim.tbl_extend("keep", opts, {
+            pickers = {
+              ccc.picker.hex,
+              ccc.picker.css_rgb,
+              ccc.picker.css_hsl,
+              ccc.picker.css_hwb,
+              ccc.picker.css_lab,
+              ccc.picker.css_lch,
+              ccc.picker.css_oklab,
+              ccc.picker.css_oklch,
+              ccc.picker.custom_entries(decoded_colors),
+            },
+          })
+        end
       end
 
       ccc.setup(opts)

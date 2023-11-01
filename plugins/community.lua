@@ -44,6 +44,8 @@ return {
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
 
   { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.motion.nvim-spider" },
 
   { import = "astrocommunity.note-taking.obsidian-nvim" },
   -- { import = "astrocommunity.note-taking.neorg" },
